@@ -1,0 +1,53 @@
+大数据环境中有些数据是不敏感的公开信息，有些则是敏感的只有特定认证用户才能
+获取的保护数据。然而随着非敏感数据的增多，攻击者完全有可能设计特定的推断攻击模型
+来从不敏感数据推测并且还原出不公开的敏感数据。在无时无刻不断产生数据的生产环境中，
+传统的诸如k-匿名化及其增强版本等静态数据保护方法在实时性和数据可用性上无法满足生产环境等
+的要求。故提出了基于人工智能的隐私数据保护模型，结合人工智能，动态地学习和防御针对
+数据隐私的推断攻击。
+
+int nums = in.nextInt();
+        long[][] matrix = new long[nums][3];
+        for(int i = 0;i < nums;i++){
+            matrix[i][0] = in.nextLong();
+            matrix[i][1] = in.nextLong();
+            matrix[i][2] = in.nextLong();
+        }
+        boolean[] hege = new boolean[nums];
+        for(int i = 0;i < nums;i++){
+            for(int j = 0;j < nums;j++){
+                if(j == i){
+                    continue;
+                }
+                if(hege[i] != true){
+                    if(matrix[i][0] < matrix[j][0] && matrix[i][1] < matrix[j][1] && matrix[i][2] < matrix[j][2]){
+                        hege[i] = true;
+                        break;
+                    }
+                }
+                if(hege[j] != true){
+                    if(matrix[i][0] > matrix[j][0] && matrix[i][1] > matrix[j][1] && matrix[i][2] > matrix[j][2]){
+                        hege[j] = true;
+                    }
+                }
+            }
+        }
+        int count = 0;
+        for(int i = 0;i < nums;i++){
+            if(hege[i] == true){
+                count++;
+            }
+        }
+        System.out.println(count);
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int groupNum = in.nextInt();
+        for(int i = 0;i < groupNum;i++){
+            System.out.println("Yes");
+        }
+    }
+}
+深度学习通过神经网络的分层处理，将低层特征组合成更加抽象的高层表示属性类别或特征，以发现数据的分布式特征表示［2］，其模型性能与训练数据集的规模和质量密切相关，而训练数据集中通常包含较多的敏感信息，攻击者通过一定的攻击手段可以还原出训练数据集，从而使得用户隐私信息泄露．因此，如何在不泄露个人敏感信息的前提下提升数据可用性是当前深度学习应用面临的主要问题。

@@ -1,0 +1,3 @@
+划分：QI组的set集合 partition
+
+ 泛化 函数（映射）
